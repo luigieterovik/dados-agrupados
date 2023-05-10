@@ -44,12 +44,14 @@ const frequenciaAbsolutaAcumulada = () => {
 
 console.log("Frequência absoluta acumulada: ", frequenciaAbsolutaAcumulada())
 
+const frequenciaTotal = frequenciaAbsolutaAcumulada().pop()
+
 
 const frequenciaRelativa = () => {
     let frequenciaRelativa = []
     
     for (let i = 0; i < quantidadeLimites; i++) {
-        frequenciaRelativa.push(+((frequenciaAbsoluta()[i] * 100) / frequenciaAbsolutaAcumulada().pop()).toFixed(2))
+        frequenciaRelativa.push(+((frequenciaAbsoluta()[i] * 100) / frequenciaTotal).toFixed(2))
     }
     
     return frequenciaRelativa
@@ -73,3 +75,31 @@ const frequenciaRelativaAcumulada = () => {
 }
 
 console.log("Frequencia relativa acumulada: ", frequenciaRelativaAcumulada())
+
+
+const pontoMedio = () => {
+    let pontoMedio = []
+
+    for (let i = 0; i < quantidadeLimites; i++) {
+        pontoMedio.push((limites[i][0] + limites[i][1]) / 2)
+    }
+
+    return pontoMedio
+}
+
+console.log("Ponto médio: ", pontoMedio())
+
+
+const media = () => {
+    let soma = 0
+
+    for (let i = 0; i < quantidadeLimites; i++) {
+        soma += frequenciaAbsoluta()[i] * pontoMedio()[i]
+    }
+
+    const media = soma / frequenciaTotal
+
+    return media
+}
+
+console.log("Média aritmética: ", media())
