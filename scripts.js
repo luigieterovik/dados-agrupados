@@ -1,8 +1,26 @@
-const numeros = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+const numeros = []
 const quantidadeNumeros = numeros.length
 
-const limites = [[2,5],[5,7],[7,11],[11,16]]
+const numerosFrequencia = [3, 5, 6, 9]
+const quantidadeNumerosFrequencia = numerosFrequencia.length
+
+const limites = [[2,4],[4,6],[6,8],[8,10]]
 const quantidadeLimites = limites.length
+
+let arrayNumerosFrequencia = []
+let usarFrequencia = false
+if (quantidadeNumeros === 0 && quantidadeNumerosFrequencia > 0) {
+    usarFrequencia = true
+
+
+    for (let i = 0; i < quantidadeLimites; i++) {
+        for (let j = 0; j < numerosFrequencia[i]; j++) {
+            arrayNumerosFrequencia.push(limites[i][0])
+        }
+    }
+}
+
+console.log("Array novo:", arrayNumerosFrequencia)
 
 const frequenciaAbsoluta = () => {
 
@@ -24,8 +42,9 @@ const frequenciaAbsoluta = () => {
     return frequenciaAbsoluta
 }
 
-
-console.log("Frequência absoluta:", frequenciaAbsoluta())
+if (usarFrequencia === true) {
+    console.log("Frequência absoluta:", frequenciaAbsoluta())
+}
 
 
 const frequenciaAbsolutaAcumulada = () => {
