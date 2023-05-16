@@ -1,10 +1,10 @@
-const numeros = [1,2,3,4,5,6,7,8,9,10]
+const numeros = [1,2,3,4,4,5,6,7,8,9,10]
 const quantidadeNumeros = numeros.length
 
 const numerosFrequencia = []
 const quantidadeNumerosFrequencia = numerosFrequencia.length
 
-const limites = [[2,4],[4,6],[6,8],[8,10]]
+const limites = [[1,2],[2,4],[4,5],[5,6],[6,8],[8,10]]
 const quantidadeLimites = limites.length
 
 let arrayNumerosFrequencia = []
@@ -124,20 +124,34 @@ console.log("Média aritmética: ", media())
 const mediana = () => {
     const classeMediana = () => {
         const valorCentralClasseMediana = frequenciaTotal / 2
-        const indexClasseMediana = frequenciaAbsolutaAcumulada().indexOf(valorCentralClasseMediana)
+
+        let valorAnterior = 0
+
+        for (let i = 0; i <= quantidadeLimites; i++) {
+            if (frequenciaAbsolutaAcumulada()[i] <= valorCentralClasseMediana) {
+                valorAnterior = frequenciaAbsolutaAcumulada()[i]
+            } else break
+        }
+
+        const indexClasseMediana = frequenciaAbsolutaAcumulada().indexOf(valorAnterior)
 
         return indexClasseMediana
     }
 
     const limiteInferior = limites[classeMediana()][0]
     const somaFrequenciaAbsoluta = frequenciaTotal / 2
-    const frequenciaClasseAnterior = limites[classeMediana() - 1][0]
+    const frequenciaAcumuladaClasseAnterior = frequenciaAbsolutaAcumulada()[classeMediana() - 1]
     const frequenciaIntervalo = frequenciaAbsoluta()[classeMediana()]
     const amplitude = (Math.max.apply(Math, limites[classeMediana()])) - (Math.min.apply(Math, limites[classeMediana()]))
 
-    const mediana = (((somaFrequenciaAbsoluta - frequenciaClasseAnterior) * amplitude) / frequenciaIntervalo) + limiteInferior
+    const mediana = (((somaFrequenciaAbsoluta - frequenciaAcumuladaClasseAnterior) * amplitude) / frequenciaIntervalo) + limiteInferior
 
     return mediana
 }
 
 console.log("Mediana: ", mediana())
+
+
+
+// INCREMENTAR O MÉTODO POR NÚMEROS FREQUENCIA
+
