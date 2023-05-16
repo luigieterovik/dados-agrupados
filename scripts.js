@@ -1,7 +1,7 @@
-const numeros = []
+const numeros = [1,2,3,4,5,6,7,8,9,10]
 const quantidadeNumeros = numeros.length
 
-const numerosFrequencia = [3, 5, 6, 9]
+const numerosFrequencia = []
 const quantidadeNumerosFrequencia = numerosFrequencia.length
 
 const limites = [[2,4],[4,6],[6,8],[8,10]]
@@ -12,7 +12,6 @@ let usarFrequencia = false
 if (quantidadeNumeros === 0 && quantidadeNumerosFrequencia > 0) {
     usarFrequencia = true
 
-
     for (let i = 0; i < quantidadeLimites; i++) {
         for (let j = 0; j < numerosFrequencia[i]; j++) {
             arrayNumerosFrequencia.push(limites[i][0])
@@ -20,7 +19,6 @@ if (quantidadeNumeros === 0 && quantidadeNumerosFrequencia > 0) {
     }
 }
 
-console.log("Array novo:", arrayNumerosFrequencia)
 
 const frequenciaAbsoluta = () => {
 
@@ -42,9 +40,8 @@ const frequenciaAbsoluta = () => {
     return frequenciaAbsoluta
 }
 
-if (usarFrequencia === true) {
-    console.log("Frequência absoluta:", frequenciaAbsoluta())
-}
+console.log("Frequência absoluta:", frequenciaAbsoluta())
+
 
 
 const frequenciaAbsolutaAcumulada = () => {
@@ -122,3 +119,25 @@ const media = () => {
 }
 
 console.log("Média aritmética: ", media())
+
+
+const mediana = () => {
+    const classeMediana = () => {
+        const valorCentralClasseMediana = frequenciaTotal / 2
+        const indexClasseMediana = frequenciaAbsolutaAcumulada().indexOf(valorCentralClasseMediana)
+
+        return indexClasseMediana
+    }
+
+    const limiteInferior = limites[classeMediana()][0]
+    const somaFrequenciaAbsoluta = frequenciaTotal / 2
+    const frequenciaClasseAnterior = limites[classeMediana() - 1][0]
+    const frequenciaIntervalo = frequenciaAbsoluta()[classeMediana()]
+    const amplitude = (Math.max.apply(Math, limites[classeMediana()])) - (Math.min.apply(Math, limites[classeMediana()]))
+
+    const mediana = (((somaFrequenciaAbsoluta - frequenciaClasseAnterior) * amplitude) / frequenciaIntervalo) + limiteInferior
+
+    return mediana
+}
+
+console.log("Mediana: ", mediana())
