@@ -152,6 +152,25 @@ const mediana = () => {
 console.log("Mediana: ", mediana())
 
 
+const variancia = () => {
+    let soma = 0
+
+    for (let i = 0; i < quantidadeLimites; i++) {
+        soma += Math.pow((pontoMedio()[i] - media()), 2) * frequenciaAbsoluta()[i]
+    }
+
+    const variancia = soma / frequenciaTotal
+
+    return variancia
+}
+
+console.log("Variância: ", variancia())
+
+
+const desvioPadrao = Math.sqrt(variancia())
+
+console.log("Desvio-padrão: ", desvioPadrao)
+
 
 // INCREMENTAR O MÉTODO POR NÚMEROS FREQUENCIA
 
