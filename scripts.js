@@ -1,24 +1,22 @@
-const numeros = [1,2,3,4,4,5,6,7,8,9,10]
-const quantidadeNumeros = numeros.length
+const numeros = [] // INSERIR CADA VALOR INDIVIDUAL
 
-const numerosFrequencia = []
+const numerosFrequencia = [3,5,4] // INSERIR OS VALORES RELATIVOS E RESPECTIVOS AOS LIMITES
 const quantidadeNumerosFrequencia = numerosFrequencia.length
 
-const limites = [[1,2],[2,4],[4,5],[5,6],[6,8],[8,10]]
+const limites = [[500,1000],[1000,1500],[1500,2000]]
 const quantidadeLimites = limites.length
 
-let arrayNumerosFrequencia = []
-let usarFrequencia = false
-if (quantidadeNumeros === 0 && quantidadeNumerosFrequencia > 0) {
-    usarFrequencia = true
+
+if (numeros.length === 0 && quantidadeNumerosFrequencia > 0) {
 
     for (let i = 0; i < quantidadeLimites; i++) {
         for (let j = 0; j < numerosFrequencia[i]; j++) {
-            arrayNumerosFrequencia.push(limites[i][0])
+            numeros.push(limites[i][0])
         }
     }
 }
 
+const quantidadeNumeros = numeros.length
 
 const frequenciaAbsoluta = () => {
 
@@ -123,24 +121,30 @@ console.log("Média aritmética: ", media())
 
 const mediana = () => {
     const classeMediana = () => {
-        const valorCentralClasseMediana = frequenciaTotal / 2
-
-        let valorAnterior = 0
-
-        for (let i = 0; i <= quantidadeLimites; i++) {
-            if (frequenciaAbsolutaAcumulada()[i] <= valorCentralClasseMediana) {
-                valorAnterior = frequenciaAbsolutaAcumulada()[i]
-            } else break
+        let indiceClasseMediana = 0
+        let classeAnterior = frequenciaTotal / 2
+        
+        for (let i = 1; i < quantidadeLimites; i++) {
+        	let j = i - 1
+        	
+        	if (classeAnterior >= frequenciaAbsolutaAcumulada()[j] && classeAnterior < frequenciaAbsolutaAcumulada()[i]) {
+      		indiceClasseMediana = i
+        		
+        		break
+        	}
         }
-
-        const indexClasseMediana = frequenciaAbsolutaAcumulada().indexOf(valorAnterior)
-
-        return indexClasseMediana
+        
+        return indiceClasseMediana
     }
-
+    
+    console.log(classeMediana())
+    
     const limiteInferior = limites[classeMediana()][0]
     const somaFrequenciaAbsoluta = frequenciaTotal / 2
-    const frequenciaAcumuladaClasseAnterior = frequenciaAbsolutaAcumulada()[classeMediana() - 1]
+    let frequenciaAcumuladaClasseAnterior = 0
+    if (classeMediana() !== 0) {
+    frequenciaAcumuladaClasseAnterior = frequenciaAbsolutaAcumulada()[classeMediana() - 1]
+    } 
     const frequenciaIntervalo = frequenciaAbsoluta()[classeMediana()]
     const amplitude = (Math.max.apply(Math, limites[classeMediana()])) - (Math.min.apply(Math, limites[classeMediana()]))
 
@@ -170,7 +174,3 @@ console.log("Variância: ", variancia())
 const desvioPadrao = Math.sqrt(variancia())
 
 console.log("Desvio-padrão: ", desvioPadrao)
-
-
-// INCREMENTAR O MÉTODO POR NÚMEROS FREQUENCIA
-
