@@ -137,8 +137,6 @@ const mediana = () => {
         return indiceClasseMediana
     }
     
-    console.log(classeMediana())
-    
     const limiteInferior = limites[classeMediana()][0]
     const somaFrequenciaAbsoluta = frequenciaTotal / 2
     let frequenciaAcumuladaClasseAnterior = 0
