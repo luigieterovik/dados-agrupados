@@ -1,0 +1,89 @@
+* {
+    font-family: 'Roboto', sans-serif;
+    padding: 0; margin: 0;
+    box-sizing: border-box;
+}
+
+.divWrapper {
+    height: 100vh;
+    width: 100%;
+
+}
+
+header {
+    height: 80px;
+    background-color: rgb(148, 59, 250);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    color: white;
+}
+
+.buttonCalcular {
+    background-color: rgb(139, 53, 236);
+    color: white;
+    width: 150px;
+    height: 34px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid #7038b1;
+    border-radius: 20px;
+}
+
+.buttonCalcular:hover {
+    opacity: 0.9;
+    cursor: pointer;
+}
+
+.buttonCalcular:active {
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+textarea {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 330px;
+    height: 85px;
+    resize: none;
+    padding: 5px;
+}
+
+
+#labelNumeros {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
+    width: 330px;
+}
+
+.divQuantidade {
+    margin-top: 5%;
+}
+
+.divResultado {
+    position: relative;
+    left: 0;
+    top: 30px;
+}
+
+.inputResultados {
+    background-color: white;
+    margin-bottom: 20px;
+    border: none;
+    width: 80%;
+    height: 5vh;
+}
+
+.divWrapperbody {
+    width: 330px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}

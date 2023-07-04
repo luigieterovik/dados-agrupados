@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <title>Dados Agrupados</title>
+</head>
+
+<body>
+    <div class="divWrapper">
+        <header class="header">
+            <h1>Dados Agrupados</h1>
+        </header>
+
+        <div class="divWrapperbody">
+            <div class="divCalculo">
+                <div class="divNumeros">
+                    <label class="digitar" id="labelNumeros">Digite os limites com hífen entre o limite final e inicial e vírgula entre um limite e outro:</label><br>
+                    <textarea placeholder="10-20, 20-30, 30-40" id="textareaNumeros"></textarea>
+                </div>
+
+                <div class="divQuantidade">
+                    <label class="digitar" id="labelQuantidade">Digite as frequências absolutas simples correspondentes
+                        aos respectivos limites acima:</label><br><br>
+                    <textarea placeholder="28,14,31" id="textareaQuantidade"></textarea>
+                </div>
+                <br><button class="buttonCalcular">Calcular</button>
+            </div>
+
+            <div class="divResultado">
+                <label class="labelResultado">Frequência absoluta acumulada:</label>
+                <br><input class="inputResultados" id="inputResultadosAbsolutaAcumulada" disabled></input>
+
+                <br><label class="labelResultado">Frequência relativa:</label>
+                <br><input class="inputResultados" id="inputResultadosRelativa" disabled></input>
+
+                <br><label class="labelResultado">Frequência relativa acumulada:</label>
+                <br><input class="inputResultados" id="inputResultadosRelativaAcumulada" disabled></input>
+
+                <br><label class="labelResultado">Ponto médio:</label>
+                <br><input class="inputResultados" id="inputResultadosPontoMedio" disabled></input>
+
+                <br><label class="labelResultado">Média aritmética:</label>
+                <br><input class="inputResultados" id="inputResultadosMedia" disabled></input>
+
+                <br><label class="labelResultado">Mediana:</label>
+                <br><input class="inputResultados" id="inputResultadosMediana" disabled></input>
+
+                <br><label class="labelResultado">Variância:</label>
+                <br><input class="inputResultados" id="inputResultadosVariancia" disabled></input>
+
+                <br><label class="labelResultado">Desvio-padrão:</label>
+                <br><input class="inputResultados" id="inputResultadosDesvioPadrao" disabled></input>
+
+                <br><label class="labelResultado">Moda:</label>
+                <br><input class="inputResultados" id="inputResultadosModa" disabled></input>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="./scripts.js"></script>
+
+</html>
