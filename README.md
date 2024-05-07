@@ -1,6 +1,6 @@
 ## Calculadora de Dados Agrupados
 
-Uma página que realiza cálculos de dados agrupados. Foi desenvolvido em HTML, CSS e JavaScript. Para utilizar, preencha os campos requeridos, conforme o formato exemplificado em cada campos. Em seguida, clique em "Calcular" e os valores serão calculados.
+Uma página que realiza cálculos de dados agrupados. Foi desenvolvido em HTML, CSS e JavaScript. Para utilizar, preencha os campos requeridos, conforme o formato exemplificado em cada campo. Em seguida, clique em "Calcular" e os valores serão calculados.
 
 <br>
 
